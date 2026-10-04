@@ -1,0 +1,18 @@
+[Unit]
+Description=Battery Percentage Monitor
+After=dbus.service upower.service
+Wants=network-online.target upower.service
+After=network-online.target upower.service dbus.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/fatboy/battery-monitor/battery_monitor.py
+Restart=always
+RestartSec=5
+
+# Optional hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
