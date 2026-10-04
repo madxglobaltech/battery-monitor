@@ -1,0 +1,5 @@
+sudo apt install -y \
+  python3-dbus \
+  python3-gi \
+  python3-requests \
+  python3-paho-mqtt
